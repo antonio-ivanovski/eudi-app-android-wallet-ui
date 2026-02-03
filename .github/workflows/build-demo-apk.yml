@@ -68,7 +68,7 @@ jobs:
           tag_name: ${{ steps.version.outputs.tag }}
           name: "EUDI Wallet Demo - ${{ steps.version.outputs.tag }}"
           draft: false
-          prerelease: true
+          prerelease: false
           files: ${{ steps.apk_path.outputs.apk_path }}
           body: |
             ## EUDI Wallet Demo APK
@@ -80,6 +80,6 @@ jobs:
             ### Install
             Download the APK and install on your Android device (requires Android 10+).
             
-            > ⚠️ This is a debug build with a self-signed certificate.
+            > This is a debug build intended for testing with [Vidos](https://vidos.id) services.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
